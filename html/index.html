@@ -88,8 +88,9 @@
           <label>uuid</label> <input type="text" class="form-control" v-model="uuid">
           <button class="btn btn-default" v-on:click="ble_readvalue">bleReadValue</button>
           <hr>
-          <label>uuid</label> <input type="text" class="form-control" v-model="uuid"> <label>withresponse</label> <input type="checkbox" v-model="withresponse"><br>
-          <label>value(hexstring)</label> <input type="text" class="form-control" v-model="value">
+          <label>uuid</label> <input type="text" class="form-control" v-model="uuid">
+          <label>value(hexstring)</label> <input type="checkbox" v-model="withresponse" id="withresponse"> <label for="withresponse">withresponse</label>
+          <input type="text" class="form-control" v-model="value">
           <button class="btn btn-default" v-on:click="ble_writevalue">bleWriteValue</button>
         </div>
         <div class="col-md-6">
