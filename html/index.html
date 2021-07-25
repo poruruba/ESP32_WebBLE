@@ -57,6 +57,11 @@
           <hr>
           <div class="form-inline">
             <label>address</label> <input type="text" class="form-control" v-model="address">
+          </div>
+          <button class="btn btn-default" v-on:click="ble_scanresult">bleScanResult</button>
+          <hr>
+          <div class="form-inline">
+            <label>address</label> <input type="text" class="form-control" v-model="address">
             <label>addresstype(option)</label> <input type="text" class="form-control" v-model="addrtype">
           </div>
           <button class="btn btn-default" v-on:click="ble_connect">bleConnect</button>
