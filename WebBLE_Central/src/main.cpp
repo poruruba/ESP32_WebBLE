@@ -236,22 +236,22 @@ long bleScanResult(const char *address){
   obj["addresstype"] = device->getAddressType();
 
   if (device->haveName())
-    obj["name"] = device->getName().c_str();
+    obj["name"] = (char *)device->getName().c_str();
   if (device->haveTXPower())
     obj["txpower"] = device->getTXPower();
   if (device->haveRSSI())
     obj["rssi"] = device->getRSSI();
   if (device->haveServiceUUID())
-    obj["serviceuuid"] = device->getServiceUUID().toString().c_str();
+    obj["serviceuuid"] = (char *)device->getServiceUUID().toString().c_str();
 
   if( device->haveAppearance() )
     obj["appearance"] = device->getAppearance();
   if (device->haveManufacturerData())
-    obj["manufacturerData"] = device->getManufacturerData().c_str();
+    obj["manufacturerData"] = (char *)device->getManufacturerData().c_str();
 
   uint8_t *payload = device->getPayload();
   int payload_len = device->getPayloadLength();
-  obj["payload"] = create_hexstr(payload, payload_len).c_str();
+  obj["payload"] = (char *)create_hexstr(payload, payload_len).c_str();
 
   size_t len = serializeJson(json_response, json_buffer, sizeof(json_buffer));
   if (len < 0 || len >= sizeof(json_buffer))
