@@ -124,6 +124,14 @@ var vue_options = {
             this.ws_socket.send(JSON.stringify(message));
             this.console_log(this.make_console_output_message(message.type, message));
         },
+        ble_scanresult: function(){
+            var message = {
+                type: "scanresult",
+                address: this.address
+            };
+            this.ws_socket.send(JSON.stringify(message));
+            this.console_log(this.make_console_output_message(message.type, message));
+        },
         ble_connect: function () {
             var message = {
                 type: "connect",
